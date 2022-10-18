@@ -1,4 +1,4 @@
-# Appwrite-users
+# Appwrite-teams
 Official docs here: https://appwrite.io/docs/server/teams?sdk=nodejs-default
 
 # Description
