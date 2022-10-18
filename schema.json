@@ -1,0 +1,149 @@
+{
+  "type": "datasource",
+  "metadata": {},
+  "schema": {
+    "docs": "https://appwrite.io/docs/server/teams",
+    "friendlyName": "Appwrite teams",
+    "type": "API",
+    "description": "Manage teams in Appwrite",
+    "datasource": {
+      "endpoint": {
+        "type": "string",
+        "required": true
+      },
+      "projectId": {
+        "type": "string",
+        "required": true
+      },
+      "apiKey": {
+        "type": "password",
+        "required": true
+      }
+    },
+    "query": {
+      "create": {
+        "type": "fields",
+        "fields": {
+          "teamId": {
+            "type": "string",
+            "required": true
+          },
+          "name": {
+            "type": "string",
+            "required": false
+          },
+          "roles": {
+            "type": "json",
+            "required": false
+          }
+        }
+      },
+      "read": {
+        "type": "fields",
+        "fields": {
+          "teamId": {
+            "type": "string",
+            "required": true
+          },
+          "membershipId": {
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      "update": {
+        "type": "fields",
+        "fields": {
+          "teamId": {
+            "type": "string",
+            "required": true
+          },
+          "name": {
+            "type": "string",
+            "required": true
+          }
+        }
+      },
+      "delete": {
+        "type": "fields",
+        "fields": {
+          "teamId": {
+            "type": "string",
+            "required": true
+          },
+          "membershipId": {
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      "createMembership": {
+        "type": "fields",
+        "fields": {
+          "teamId": {
+            "type": "string",
+            "required": true
+          },
+          "email": {
+            "type": "string",
+            "required": true
+          },
+          "roles": {
+            "type": "json",
+            "required": true
+          },
+          "url": {
+            "type": "string",
+            "required": true
+          },
+          "name": {
+            "type": "string",
+            "required": false
+          }
+        }
+      },
+      "updateMembership": {
+        "type": "fields",
+        "fields": {
+          "teamId": {
+            "type": "string",
+            "required": true
+          },
+          "membershipId": {
+            "type": "string",
+            "required": true
+          },
+          "roles": {
+            "type": "json",
+            "required": false
+          },
+          "userId": {
+            "type": "string",
+            "required": false
+          },
+          "secret": {
+            "type": "string",
+            "required": false
+          }
+        }
+      }
+    },
+    "extra": {
+      "type": {
+        "displayName": "Type",
+        "type": "list",
+        "required": false,
+        "data": {
+          "read": [
+            "Team",
+            "Memberships"
+          ],
+          "delete": [
+            "Team",
+            "Memberships"
+          ]
+        }
+      }
+    }
+  }
+}
